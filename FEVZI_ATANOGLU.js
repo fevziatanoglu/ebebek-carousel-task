@@ -49,6 +49,7 @@
     }
     renderItems(items);
   }
+
   const renderItems = (items) => {
     const itemsContainer = document.querySelector('.carousel-wrapper');
     if (!itemsContainer) return;
@@ -95,7 +96,6 @@
     </div>
   `;
     }).join('');
-
     itemsContainer.innerHTML = itemsHTML;
   };
 
@@ -113,6 +113,10 @@
       }
 
       .carousel-wrapper {
+        position: relative;
+        display: flex;
+        gap: 13px;
+        overflow-x: auto;
         padding: 20px 0;
         -ms-overflow-style: none;
         scrollbar-width: none;          
@@ -125,13 +129,6 @@
         font-weight: 700;
         text-align: start;
         margin: 0;
-      }
-
-      .carousel-wrapper {
-        position: relative;
-        display: flex;
-        gap: 13px;
-        overflow-x: auto;
       }
 
       .carousel-button {
@@ -165,12 +162,14 @@
       }
 
       .carousel-item {
-        min-width: 245px;
         position: relative;
+        padding 0;
+        margin: 0;
       }
 
       .carousel-item-link {
-        height: 100%;         
+        height: 100%;       
+        width: 245px;  
         display: flex;
         flex-direction: column;
         justify-content: space-between; 
@@ -288,9 +287,15 @@
         font-size: 0.7em;
       }
 
+      @media (max-width: 1440px) {
+        .carousel-item-link {
+          width: 275px;
+        }  
+      }
+
       @media (max-width: 1024px) {
-        .carousel-item {
-          width: 300px;
+        .carousel-item-link {
+          width: 295px;
         }  
       }
 
@@ -299,22 +304,19 @@
           padding: 0 15px;
         }
         
-        .carousel-item {
-          width: 180px;
+        .carousel-item-link {
+          width: 335px;
         }
         
         .carousel-title {
           font-size: 20px;
         }
 
-        .carousel-item {
-          width: 350px;
-        }  
       }
 
       @media (max-width: 480px) {
-        .carousel-item {
-          width: 180px;
+        .carousel-item-link {
+          width: 190px;
         }
         
         .carousel-button {
