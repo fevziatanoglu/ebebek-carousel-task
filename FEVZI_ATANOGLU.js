@@ -334,7 +334,7 @@
     const leftButton = document.querySelector('.carousel-button.left');
     const rightButton = document.querySelector('.carousel-button.right');
     const carouselWrapper = document.querySelector('.carousel-wrapper');
-    const carouselItemWidth = document.querySelector('.carousel-item')?.offsetWidth || 250;
+    const carouselItemWidth = document.querySelector('.carousel-item-link')?.offsetWidth || 250;
     const scrollAmount = (carouselItemWidth || 250) + (carouselWrapper.style.gap.replace('px', '') || 13);
 
     if (!leftButton || !rightButton || !carouselWrapper) return;
